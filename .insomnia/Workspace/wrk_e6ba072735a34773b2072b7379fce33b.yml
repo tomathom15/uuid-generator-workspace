@@ -1,9 +1,9 @@
 _id: wrk_e6ba072735a34773b2072b7379fce33b
 type: Workspace
 parentId: null
-modified: 1612355392445
+modified: 1612861525557
 created: 1603090884959
-name: UUID_generator 1.0.3
+name: UUID generator based on httpbin.org 1.0.3
 description: >-
   A simple service returning a UUID based on https://httpbin.org
 
