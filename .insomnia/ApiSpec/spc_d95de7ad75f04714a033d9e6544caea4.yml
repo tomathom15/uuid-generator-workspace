@@ -1,7 +1,7 @@
 _id: spc_d95de7ad75f04714a033d9e6544caea4
 type: ApiSpec
 parentId: wrk_e6ba072735a34773b2072b7379fce33b
-modified: 1630390077595
+modified: 1630390461261
 created: 1603090884967
 fileName: uuid-generator.yaml
 contents: >
@@ -10,18 +10,21 @@ contents: >
   servers:
     - url: https://httpbin.org/
   tags:
-    - description: Creates a random UUDI and returns it in a JSON structure
+    - description: Creates a random UUID and returns it in a JSON structure
       name: Generate UUID
   info:
     contact:
       email: me@kennethreitz.org
       url: https://kennethreitz.org
     description: >-
-      A simple service returning a UUID based on https://httpbin.org
+      A simple service returning a UUID based on <https://httpbin.org>
+      Also has some more features added like delayed responses and similar
+      
 
-      Service is free - but think about giving an ice cream to the developer
+      Service is free - but **think about giving an ice cream to the developer**
 
-      ![Developer wants an ice cream](https://camo.githubusercontent.com/7454fb1622dd3589ddac9251455a601c6fd21800/687474703a2f2f6661726d312e737461746963666c69636b722e636f6d2f3537322f33323531343636393638335f346461663261623762635f6b5f642e6a7067) 
+
+      ![Developer wants an ice cream](https://images.pexels.com/photos/5060281/pexels-photo-5060281.jpeg?cs=srgb&dl=pexels-roman-odintsov-5060281.jpg&fm=jpg&w=200) 
     title: UUID generator based on httpbin.org
     version: 1.3.0
   paths:
