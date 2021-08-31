@@ -1,7 +1,7 @@
 _id: spc_d95de7ad75f04714a033d9e6544caea4
 type: ApiSpec
 parentId: wrk_e6ba072735a34773b2072b7379fce33b
-modified: 1630390461261
+modified: 1630391343320
 created: 1603090884967
 fileName: uuid-generator.yaml
 contents: >
@@ -16,6 +16,7 @@ contents: >
     contact:
       email: me@kennethreitz.org
       url: https://kennethreitz.org
+      name: Kenneth Reitz
     description: >-
       A simple service returning a UUID based on <https://httpbin.org>
       Also has some more features added like delayed responses and similar
