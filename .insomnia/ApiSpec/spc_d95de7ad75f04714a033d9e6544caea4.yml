@@ -1,10 +1,10 @@
 _id: spc_d95de7ad75f04714a033d9e6544caea4
 type: ApiSpec
 parentId: wrk_e6ba072735a34773b2072b7379fce33b
-modified: 1630391343320
+modified: 1660571056251
 created: 1603090884967
 fileName: uuid-generator.yaml
-contents: >
+contents: >+
   openapi: 3.0.0
 
   servers:
@@ -18,7 +18,7 @@ contents: >
       url: https://kennethreitz.org
       name: Kenneth Reitz
     description: >-
-      A simple service returning a UUID based on <https://httpbin.org>
+      A cool simple service returning a UUID based on <https://httpbin.org>
       Also has some more features added like delayed responses and similar
       
 
@@ -39,6 +39,8 @@ contents: >
           - Generate UUID
     /anything/query:
       get:
+        security:
+          - KeyCloak: [kong_api_access]
         parameters:
           - in: query
             name: exampleParam
@@ -123,6 +125,23 @@ contents: >
         x-kong-plugin-request-validator:
           enabled: true
   components:
+    securitySchemes:
+      KeyCloak:
+        type: openIdConnect
+        openIdConnectUrl: https://keycloak.apim.eu/auth/realms/kong/.well-known/openid-configuration
+        x-kong-security-openid-connect:
+          config:
+            client_id: 
+              - blog_post
+            client_secret: 
+              - a5186adc-b5e2-4501-85a8-eb19a5e1a2a3
+            ssl_verify: false
+            consumer_claim:
+              - email
+            verify_signature: false
+            redirect_uri:
+               - http://localhost:8000/anything/query
+            consumer_optional: true
     schemas:
       Dog:
         type: object
@@ -147,4 +166,5 @@ contents: >
    #     required:
    #      - hunts
    #      - age
+
 contentType: yaml
