@@ -1,9 +1,9 @@
 _id: env_env_63c85d61384e0abffc70d232654e3642e173509e_sub
 type: Environment
 parentId: env_63c85d61384e0abffc70d232654e3642e173509e
-modified: 1659534739800
+modified: 1667465103693
 created: 1603093186514
-name: OpenAPI env
+name: Live backend direct (no gateway)
 data:
   scheme: https
   base_path: ""

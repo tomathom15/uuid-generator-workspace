@@ -1,13 +1,13 @@
 _id: env_ee4f32dde4d14677a633736b07f8d0a9
 type: Environment
 parentId: env_63c85d61384e0abffc70d232654e3642e173509e
-modified: 1659534734434
+modified: 1667465092385
 created: 1646132133856
-name: Pre Prod
+name: Sandbox
 data:
-  scheme: https
+  scheme: http
   base_path: ""
-  host: preprod.httpbin.org
+  host: localhost:8000
 dataPropertyOrder:
   "&":
     - scheme

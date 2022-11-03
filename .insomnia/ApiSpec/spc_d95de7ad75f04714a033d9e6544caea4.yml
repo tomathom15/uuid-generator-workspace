@@ -1,7 +1,7 @@
 _id: spc_d95de7ad75f04714a033d9e6544caea4
 type: ApiSpec
 parentId: wrk_e6ba072735a34773b2072b7379fce33b
-modified: 1666248083486
+modified: 1667465608964
 created: 1603090884967
 fileName: uuid-generator.yaml
 contents: >+
@@ -10,7 +10,7 @@ contents: >+
   servers:
     - url: https://httpbin.org/
   tags:
-    - description: Creates a random UUID and returns it in a JSON structure
+    - description: Creates a random UUID and returns it in a JSON structure and more
       name: Generate UUID
   info:
     contact:
