@@ -1,13 +1,13 @@
 _id: env_0ab9354e95d6411bbbff5d57e109357f
 type: Environment
 parentId: env_63c85d61384e0abffc70d232654e3642e173509e
-modified: 1667465766625
+modified: 1667466054305
 created: 1667465749024
 name: Live backend direct (no gateway)
 data:
-  scheme: http
+  scheme: https
   base_path: ""
-  host: localhost:8000
+  host: httpbin.org
 dataPropertyOrder:
   "&":
     - scheme
