@@ -1,9 +1,9 @@
-_id: env_ee4f32dde4d14677a633736b07f8d0a9
+_id: env_0ab9354e95d6411bbbff5d57e109357f
 type: Environment
 parentId: env_63c85d61384e0abffc70d232654e3642e173509e
 modified: 1667465766625
-created: 1646132133856
-name: Sandbox
+created: 1667465749024
+name: Live backend direct (no gateway)
 data:
   scheme: http
   base_path: ""
@@ -15,4 +15,4 @@ dataPropertyOrder:
     - host
 color: null
 isPrivate: false
-metaSortKey: 2
+metaSortKey: 1
