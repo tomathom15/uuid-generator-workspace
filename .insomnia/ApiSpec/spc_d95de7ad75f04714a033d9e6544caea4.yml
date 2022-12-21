@@ -1,17 +1,14 @@
 _id: spc_d95de7ad75f04714a033d9e6544caea4
 type: ApiSpec
 parentId: wrk_e6ba072735a34773b2072b7379fce33b
-modified: 1667466263653
+modified: 1671610765830
 created: 1603090884967
 fileName: uuid-generator.yaml
-contents: >+
+contents: >
   openapi: 3.0.0
 
   servers:
-    - url: https://httpbin.org/
-  tags:
-    - description: Creates a random UUID and returns it in a JSON structure
-      name: Generate UUID
+    - url: https://httpbin.org
   info:
     contact:
       email: me@kennethreitz.org
@@ -31,6 +28,8 @@ contents: >+
   paths:
     /uuid:
       get:
+        description: Generate and get an UUID
+        operationId: get_uuid
         responses:
           "200":
             description: A UUID4.
@@ -39,6 +38,8 @@ contents: >+
           - Generate UUID
     /anything/query:
       get:
+        description: returns all your query parameters
+        operationId: query
         security:
           - KeyCloak: [kong_api_access]
         parameters:
@@ -61,6 +62,8 @@ contents: >+
           enabled: true
     /anything/catOrDog:
       post:
+        description: create a new pet
+        operationId: create_pet
         requestBody:
           content:
             application/json:
@@ -80,6 +83,8 @@ contents: >+
           enabled: false 
     /delay/{delay}: 
       get:
+        description: delay a responses by a defined number of secondes
+        operationId: delay
         parameters:
           - in: path
             name: delay
@@ -100,6 +105,8 @@ contents: >+
           enabled: true
     /status/{codes}:
       get:
+        description: returns a http status code
+        operationId: status_code
         parameters:
           - in: path
             name: codes
@@ -167,4 +174,14 @@ contents: >+
    #      - hunts
    #      - age
 
+  tags:
+    - description: Creates a random UUID and returns it in a JSON structure
+      name: Generate UUID
+    - name: Anything
+    - name: Query
+    - name: CatOrDog
+    - name: Body
+    - name: Delayed Response
+    - name: Path
+    - name: Status Codes
 contentType: yaml
