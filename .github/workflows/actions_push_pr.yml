@@ -13,6 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate Kong declarative configuration from Spec
-        run: inso generate config ./openapi/uuid-generator.yaml --type declarative > kong.yaml
+        #name for insomnia file not for real-life usage: spc_d95de7ad75f04714a033d9e6544caea4.yml
+        run: inso generate config .insomnia/ApiSpec/spc_d95de7ad75f04714a033d9e6544caea4.yml.yaml --type declarative > kong.yaml
       - name: Validate Kong declarative configuration
         run: deck validate
