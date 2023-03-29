@@ -13,7 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate Kong declarative configuration from Spec
-        run: inso generate config ./openapi/uuid-generator.yaml --type declarative > kongV2.yaml
+        run: inso generate config .insomnia/ApiSpec/spc_d95de7ad75f04714a033d9e6544caea4.yml --type declarative > kongV2.yaml
+        #run: inso generate config ./openapi/uuid-generator.yaml --type declarative > kongV2.yaml
       - name: Convert the spec from v2 into v3
         run: deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file kongV2.yaml --output-file kong.yaml
       - name: Validate Kong declarative configuration
@@ -21,4 +22,4 @@ jobs:
       - name: Deploy declarative config
         run: deck sync
       - name: Publish Spec to Dev Portal
-        run: cd ./openapi && http --check-status --ignore-stdin PUT :8001/default/files/specs/uuid-generator.yaml contents=@uuid-generator.yaml
+        run: cd .insomnia/ApiSpec && http --check-status --ignore-stdin PUT :8001/default/files/specs/spc_d95de7ad75f04714a033d9e6544caea4.yml contents=@spc_d95de7ad75f04714a033d9e6544caea4.yml
