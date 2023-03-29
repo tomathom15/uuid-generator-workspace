@@ -1,14 +1,14 @@
-name: Action on Pull Request to generate Kong Config from Spec and Validate it
+name: Apply generated configuration to local Kong gateway and update API documentation
 
 on:
-  pull_request:
+  push:
     branches:
       - master
 
 jobs:
   deploy_to_kong:
     runs-on: self-hosted
-    name: Generate Kong config from Spec and Validate config
+    name: Apply generated configuration to local Kong gateway and update API documentation
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -18,3 +18,7 @@ jobs:
         run: deck convert --from kong-gateway-2.x --to kong-gateway-3.x --input-file kongV2.yaml --output-file kong.yaml
       - name: Validate Kong declarative configuration
         run: deck validate
+      - name: Deploy declarative config
+        run: deck sync
+      - name: Publish Spec to Dev Portal
+        run: cd ./openapi && http --check-status --ignore-stdin PUT :8001/default/files/specs/uuid-generator.yaml contents=@uuid-generator.yaml
